@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Entity</title>
+
+<style type="text/css">
+*{font-family: Consolas;}
+label{display: block;}
+#packageName{width: 850px;}
+</style>
+
+</head>
+<body>
+
+<div>
+	<form action="" onsubmit="return false;" autocomplete="on">
+	<label>packageName</label>
+	<input id="packageName" name="packageName" value=""/><br />
+	<label>tableSchema</label>
+	<input id="tableSchema" name="tableSchema" value=""/><br />
+	<label>tableName</label>
+	<input id="tableName" name="tableName" value=""/>
+	<input type="button" id="View" value="View"/>
+	<input type="button" id="Download" value="Download"/>
+	</form>
+</div>
+
+<br />
+
+<div>
+	<textarea id="ViewArea" rows="30" cols="120"></textarea>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<script type="text/javascript" src="/js/plugin.js"></script>
+<script type="text/javascript">
+
+function pushHistory(param) {
+	
+	var packageName = localStorage.getItem('packageName');
+	var tableSchema = localStorage.getItem('tableSchema');
+	var tableName = localStorage.getItem('tableName');
+
+	if (!packageName) {
+		packageName = [];
+	} else {
+		packageName = packageName.split(',');
+	}
+
+	if (!tableSchema) {
+		tableSchema = [];
+	} else {
+		tableSchema = tableSchema.split(',');
+	}
+
+	if (!tableName) {
+		tableName = [];
+	} else {
+		tableName = tableName.split(',');
+	}
+
+	if (param.packageName) {
+		var hasValue = false;
+		for (var i in packageName) {
+			var v = packageName[i];
+			if (v == param.packageName) {
+				hasValue = true;
+				break;
+			}
+		}
+		
+		if (hasValue == false) {
+			packageName.push(param.packageName);
+			localStorage.setItem('packageName', packageName);
+		}
+	}
+	
+	if (param.tableSchema) {
+		var hasValue = false;
+		for (var i in tableSchema) {
+			var v = tableSchema[i];
+			if (v == param.tableSchema) {
+				hasValue = true;
+				break;
+			}
+		}
+		
+		if (hasValue == false) {
+			tableSchema.push(param.tableSchema);
+			localStorage.setItem('tableSchema', tableSchema);
+		}
+	}
+	
+	if (param.tableName) {
+		var hasValue = false;
+		for (var i in tableName) {
+			var v = tableName[i];
+			if (v == param.tableName) {
+				hasValue = true;
+				break;
+			}
+		}
+		
+		if (hasValue == false) {
+			tableName.push(param.tableName);
+			localStorage.setItem('tableName', tableName);
+		}
+	}
+
+}
+
+function getHistory() {
+	var packageName = localStorage.getItem('packageName');
+	var tableSchema = localStorage.getItem('tableSchema');
+	var tableName = localStorage.getItem('tableName');
+	
+	var param = {
+			packageName: packageName.split(','),
+			tableSchema: tableSchema.split(','),
+			tableName: tableName.split(',')
+	};
+	
+	return param;
+}
+
+function getFormData() {
+	var packageName = $('#packageName').val();
+	var tableSchema = $('#tableSchema').val();
+	var tableName = $('#tableName').val();
+	
+	var param = {
+			packageName: packageName,
+			tableSchema: tableSchema,
+			tableName: tableName
+	};
+
+	pushHistory(param);
+	
+	return param;
+}
+
+$(function() {
+	
+	var _history = getHistory();
+	
+	if (_history.packageName) {
+		$('#packageName').val(_history.packageName[0]);
+	}
+	
+	if (_history.tableSchema) {
+		$('#tableSchema').val(_history.tableSchema[0]);
+	}
+
+	if (_history.tableName) {
+		$('#tableName').val(_history.tableName[0]);
+	}
+	
+	$('#View').click(function(e) {
+		var param = getFormData();
+		
+		$.post('/entity', param, function(response) {
+			$('#ViewArea').val(response);
+		});
+	});
+	
+	$('#Download').click(function(e) {
+		var param = getFormData();
+		
+		FileDownloadCall('/entity/download', param, 'download');
+	});
+});
+</script>
+</html>

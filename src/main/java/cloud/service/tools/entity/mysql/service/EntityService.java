@@ -85,7 +85,7 @@ public class EntityService {
 //        return list;
     }
     
-    private Object format(List<Columns> list, String packageName) {
+    public Object format(List<Columns> list, String packageName) {
     	
     	ClassBuilder clazz = new ClassBuilder();
     	
@@ -152,7 +152,7 @@ public class EntityService {
     	return clazz.toString();
     }
     
-    private List<String> getImportList(List<Columns> list) {
+    public List<String> getImportList(List<Columns> list) {
     	
     	List<String> importList = new ArrayList<>();
     	
@@ -171,7 +171,7 @@ public class EntityService {
     	return importList;
     }
     
-    private String getDataType(String dataType) {
+    public String getDataType(String dataType) {
     	
     	switch (dataType) {
 		case "int":
@@ -188,7 +188,7 @@ public class EntityService {
     	return dataType;
     }
     
-    private String getNameCamelCase(String name) {
+    public String getNameCamelCase(String name) {
     	
     	if (name.indexOf("_") == -1) {
 			return name;
@@ -217,7 +217,7 @@ public class EntityService {
     	return _name;
     }
     
-    private String getNameCamelCase(String name, boolean isFirstUpperCase) {
+    public String getNameCamelCase(String name, boolean isFirstUpperCase) {
     	
     	name = getNameCamelCase(name);
     	
@@ -228,7 +228,7 @@ public class EntityService {
     	return name;
     }
     
-    private String firstUpperCase(String name) {
+    public String firstUpperCase(String name) {
     	return String.valueOf(name.charAt(0)).toUpperCase() + name.substring(1);
     }
 
