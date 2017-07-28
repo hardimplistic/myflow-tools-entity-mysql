@@ -35,7 +35,7 @@
 		</dependency>
 		<dependency>
 			<groupId>lnimpler</groupId>
-			<artifactId>cloud-dependency-jpa</artifactId>
+			<artifactId>myflow-dependency-jpa</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
@@ -48,7 +48,7 @@
 
 		<dependency>
 			<groupId>lnimpler</groupId>
-			<artifactId>cloud-dependency-utils</artifactId>
+			<artifactId>myflow-dependency-utils</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
