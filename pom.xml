@@ -21,34 +21,35 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-
-		<!-- mysql -->
+		<!-- database -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-
-		<!-- setting jpa -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>lnimpler</groupId>
-			<artifactId>myflow-dependency-jpa</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<!-- setting mybatis -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.2.1</version>
 		</dependency>
 
+		<!-- lnimpler -->
 		<dependency>
 			<groupId>lnimpler</groupId>
-			<artifactId>myflow-dependency-utils</artifactId>
+			<artifactId>myflow-dependency-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>lnimpler</groupId>
+			<artifactId>myflow-public-service</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>lnimpler</groupId>
+			<artifactId>myflow-public-cms</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 

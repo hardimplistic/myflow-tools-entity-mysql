@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cloud.dependency.utils.SQLBuilder;
+import cloud.dependency.core.utils.SQLBuilder;
 import cloud.service.tools.entity.mysql.jpa.entity.Columns;
 import cloud.service.tools.entity.mysql.utils.ClassBuilder;
 
