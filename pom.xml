@@ -6,7 +6,7 @@
 		<artifactId>myflow</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>myflow-tools-entity-mysql</artifactId>
+	<artifactId>myflow-tools-mysql</artifactId>
 
 	<dependencies>
 		<dependency>

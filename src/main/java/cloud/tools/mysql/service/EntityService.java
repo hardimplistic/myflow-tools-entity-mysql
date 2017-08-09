@@ -1,4 +1,4 @@
-package cloud.service.tools.entity.mysql.service;
+package cloud.tools.mysql.service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cloud.dependency.core.utils.SQLBuilder;
-import cloud.service.tools.entity.mysql.jpa.entity.Columns;
-import cloud.service.tools.entity.mysql.utils.ClassBuilder;
+import cloud.tools.mysql.jpa.entity.Columns;
+import cloud.tools.mysql.utils.ClassBuilder;
 
 @Service
 @Transactional

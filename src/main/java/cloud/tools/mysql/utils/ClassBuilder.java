@@ -1,4 +1,4 @@
-package cloud.service.tools.entity.mysql.utils;
+package cloud.tools.mysql.utils;
 
 public class ClassBuilder {
 	private StringBuilder clazz;

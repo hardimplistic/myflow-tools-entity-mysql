@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>public-service</title>
+
+<style type="text/css">
+*{font-family: Consolas;}
+label{display: block;}
+#packageName{width: 850px;}
+</style>
+
+</head>
+<body>
+
+<div>
+	<label>Parent Project Directory</label>
+	<input id="directory" name="directory" value="" style="width: 600px;"/>
+	<input type="button" id="View" value="View"/>
+</div>
+
+<br />
+
+<div>
+	<textarea id="ViewArea" rows="30" cols="120"></textarea>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<script type="text/javascript" src="/js/plugin.js"></script>
+<script type="text/javascript">
+
+function getFormData() {
+	var directory = $('#directory').val();
+	
+	var param = {
+			directory: directory
+	};
+
+	return param;
+}
+
+$(function() {
+	
+	$('#View').click(function(e) {
+		var param = getFormData();
+		
+		$.post('/public/service', param, function(response) {
+			$('#ViewArea').val(response);
+		});
+	});
+	
+});
+</script>
+</html>

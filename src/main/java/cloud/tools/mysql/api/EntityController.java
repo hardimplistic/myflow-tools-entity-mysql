@@ -1,4 +1,4 @@
-package cloud.service.tools.entity.mysql.api;
+package cloud.tools.mysql.api;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.service.tools.entity.mysql.service.EntityService;
+import cloud.tools.mysql.service.EntityService;
 
 @RestController
 public class EntityController {

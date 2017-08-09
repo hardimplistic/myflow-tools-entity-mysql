@@ -1,4 +1,4 @@
-package cloud.service.tools.entity.mysql.api;
+package cloud.tools.mysql.api;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

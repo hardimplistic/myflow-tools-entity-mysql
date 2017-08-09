@@ -1,4 +1,4 @@
-package cloud.service.tools.entity.mysql.jpa.entity;
+package cloud.tools.mysql.jpa.entity;
 
 import javax.persistence.*;
 
