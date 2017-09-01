@@ -12,10 +12,10 @@ import cloud.dependency.core.jpa.CloudJpaRepositoryFactoryBean;
 @EnableEurekaClient
 @EnableJpaRepositories(basePackages = {"cloud.service.tools.entity.mysql.jpa.repository" }, repositoryFactoryBeanClass = CloudJpaRepositoryFactoryBean.class)
 @EnableSpringDataWebSupport
-public class ToolsEntityMysqlService {
+public class ToolsEntityMysql {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(ToolsEntityMysqlService.class, args);
+        SpringApplication.run(ToolsEntityMysql.class, args);
     }
 
 }
